@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  appserviceregistry:
+    build:
+      context: .
+    command: bash start-dev.sh
+    ports:
+      - "8761:8761"
+      - "5007:5005"
+    environment:
+      GRADLE_USER_HOME: /box
+      SPRING_PROFILES_ACTIVE: dev
+    volumes:
+      - .:/service-registry
+      - boxserviceregistry:/box
+    networks:
+      - ead-microservices-net
+  boxserviceregistry:
+    image: busybox
+    volumes:
+      - /box
+    networks:
+      - ead-microservices-net
+networks:
+  ead-microservices-net:
+    name: ead-microservices-net
+    external: true
+volumes:
+  boxserviceregistry:
