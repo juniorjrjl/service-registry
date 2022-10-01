@@ -1,4 +1,4 @@
-# Microservice de cursos desenvolvido no curso Decoder Project
+# Microservice de service-registry desenvolvido no curso Decoder Project
 
 Projeto de receitas
 
