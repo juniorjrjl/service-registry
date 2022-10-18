@@ -9,3 +9,10 @@ eureka:
   client:
     register-with-eureka: false
     fetch-registry: false
+    service-url:
+      default-zone: 'http://${ead.service-registry.username}:${ead.service-registry.password}@appserviceregistry:8761/eureka'
+
+ead:
+  service-registry:
+    username: serviceregistry
+    password: ead123sr
